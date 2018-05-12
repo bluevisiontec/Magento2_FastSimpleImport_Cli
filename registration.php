@@ -5,6 +5,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'FireGento_FastSimpleImportDemo',
+    'Aiartinc_FastSimpleImportDemo',
     __DIR__
 );
