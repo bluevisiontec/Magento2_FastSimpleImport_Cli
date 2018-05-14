@@ -1,26 +1,15 @@
-# AIArt_FastSimpleImport_Cli
-Cli module for calling HamiltonWang_FastSimpleImport via command line
+# Magento2_FastSimpleImport_Cli
+Cli module for calling FastSimpleImport via command line
 
 
 
 Installation Instructions with Composer
 ---------------------------------------------
 
-    composer require HamiltonWang/fastsimpleimportCli
+    composer require aiartinc/magento2fastsimpleimportcli
     bin/magento module:enable HamiltonWang_FastSimpleImportCli
     bin/magento setup:upgrade
     
-    
-
-
-Installation Instructions with Composer(Master Branch)
----------------------------------------------
-
-    composer config repositories.HamiltonWang_fastsimpleimportCli vcs https://github.com/HamiltonWang/HamiltonWang_FastSimpleImport2_Cli
-    composer require HamiltonWang/fastsimpleimportCli dev-master
-    bin/magento module:enable HamiltonWang_FastSimpleImportCli
-    bin/magento setup:upgrade
-
 
 
 
@@ -56,4 +45,3 @@ Installation Instructions with Composer(Master Branch)
 
 ### Import Categories:
 `bin/magento fastsimpleimportCli:category:import`
-
