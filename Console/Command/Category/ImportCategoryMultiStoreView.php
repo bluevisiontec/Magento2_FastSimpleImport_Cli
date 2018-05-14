@@ -5,14 +5,14 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace FireGento\FastSimpleImportDemo\Console\Command\Category;
+namespace AiArtInc\fastsimpleimportCli\Console\Command\Category;
 
-use FireGento\FastSimpleImportDemo\Console\Command\AbstractImportCommand;
+use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package FireGento\FastSimpleImport2\Console\Command
+ * @package AiArtInc\FastSimpleImport2\Console\Command
  *
  */
 class ImportCategoryMultiStoreView extends AbstractImportCommand
@@ -21,7 +21,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportdemo:category:import')
+        $this->setName('fastsimpleimportCli:category:import')
             ->setDescription('Import Category');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -37,7 +37,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
     {
         $data[] = array(
             '_root' => 'Default Category',
-            '_category' => 'FireGento TestCategory DE',
+            '_category' => 'AiArtInc TestCategory DE',
             'description' => 'Test2',
             'is_active' => '1',
             'include_in_menu' => '1',
@@ -48,7 +48,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
         );
         $data[] = array(
             '_store' => 'en',
-            'name' => 'FireGento TestCategory EN',
+            'name' => 'AiArtInc TestCategory EN',
             'description' => 'StoreViewLevel'
         );
         return $data;

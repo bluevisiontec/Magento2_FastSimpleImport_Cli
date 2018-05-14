@@ -3,14 +3,14 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace FireGento\FastSimpleImportDemo\Console\Command\Customer;
+namespace AiArtInc\fastsimpleimportCli\Console\Command\Customer;
 
-use FireGento\FastSimpleImportDemo\Console\Command\AbstractImportCommand;
+use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package FireGento\FastSimpleImport2\Console\Command
+ * @package AiArtInc\FastSimpleImport2\Console\Command
  *
  */
 class ImportCustomer extends AbstractImportCommand
@@ -19,7 +19,7 @@ class ImportCustomer extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportdemo:customers:import')
+        $this->setName('fastsimpleimportCli:customers:import')
             ->setDescription('Import Customer ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -36,7 +36,7 @@ class ImportCustomer extends AbstractImportCommand
         $data = [];
         for ($i = 1; $i <= 1; $i++) {
             $data[] = array(
-                'email' => 'testemail@firegento.de',
+                'email' => 'testemail@FireGento.de',
                 '_website' => 'base',
                 '_store' => 'default',
                 'confirmation' => '',

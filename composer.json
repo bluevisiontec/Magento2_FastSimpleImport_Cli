@@ -4,7 +4,7 @@
   "homepage": "https://github.com/aiartinc/Magento2_FastSimpleImport_Cli",
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
-    "firegento/fastsimpleimport": "*",
+    "AiArtInc/fastsimpleimport": "*",
     "league/csv": "^8.0"
   },
   "type": "magento2-module",
@@ -24,7 +24,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "FireGento\\FastSimpleImportDemo\\": ""
+      "FireGento\\fastsimpleimportCli\\": ""
     }
   }
 }

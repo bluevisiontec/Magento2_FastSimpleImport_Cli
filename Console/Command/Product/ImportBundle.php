@@ -3,14 +3,14 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace FireGento\FastSimpleImportDemo\Console\Command\Product;
+namespace AiArtInc\fastsimpleimportCli\Console\Command\Product;
 
-use FireGento\FastSimpleImportDemo\Console\Command\AbstractImportCommand;
+use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package FireGento\FastSimpleImport2\Console\Command
+ * @package AiArtInc\FastSimpleImport2\Console\Command
  *
  */
 class ImportBundle extends AbstractImportCommand
@@ -19,7 +19,7 @@ class ImportBundle extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportdemo:products:importbundle')
+        $this->setName('fastsimpleimportCli:products:importbundle')
             ->setDescription('Import Bundle Products ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -39,7 +39,7 @@ class ImportBundle extends AbstractImportCommand
             'attribute_set_code' => 'Default',
             'product_type' => 'bundle',
             'product_websites' => 'base',
-            'name' => 'FireGento Test Product Bundle',
+            'name' => 'AiArtInc Test Product Bundle',
             'price' => '10.000',
 
             'bundle_price_type' => 'dynamic',
@@ -61,7 +61,7 @@ class ImportBundle extends AbstractImportCommand
                 'attribute_set_code' => 'Default',
                 'product_type' => 'simple',
                 'product_websites' => 'base',
-                'name' => 'FireGento Test Product Simple - ' . $color,
+                'name' => 'AiArtInc Test Product Simple - ' . $color,
                 'price' => '14.0000',
                 'additional_attributes' => "color=" . $color
 

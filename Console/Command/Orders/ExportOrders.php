@@ -5,12 +5,12 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace FireGento\FastSimpleImportDemo\Console\Command\Orders;
+namespace FireGento\fastsimpleimportCli\Console\Command\Orders;
 use Magento\ImportExport\Model\Import;
-use FireGento\FastSimpleImportDemo\Console\Command\AbstractExportCommand;
+use AiArtInc\fastsimpleimportCli\Console\Command\AbstractExportCommand;
 /**
  * Class TestCommand
- * @package FireGento\FastSimpleImport2\Console\Command
+ * @package AiArtInc\FastSimpleImport2\Console\Command
  *
  */
 class ExportOrders extends AbstractExportCommand
@@ -19,7 +19,7 @@ class ExportOrders extends AbstractExportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportdemo:orders:export')
+        $this->setName('fastsimpleimportCli:orders:export')
             ->setDescription('Export Orders ');
         $this->setEntityCode('order');
 
