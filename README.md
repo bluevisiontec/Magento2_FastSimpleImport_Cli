@@ -7,7 +7,7 @@ Installation Instructions with Composer
 ---------------------------------------------
 
     composer require aiartinc/magento2fastsimpleimportcli
-    bin/magento module:enable HamiltonWang_FastSimpleImportCli
+    bin/magento module:enable AiArtInc_Magento2FastSimpleImportCli
     bin/magento setup:upgrade
     
 
@@ -45,3 +45,4 @@ Installation Instructions with Composer
 
 ### Import Categories:
 `bin/magento fastsimpleimportCli:category:import`
+
