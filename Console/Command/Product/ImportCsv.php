@@ -1,9 +1,9 @@
 <?php
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Product;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
 
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\App\Filesystem\DirectoryList;
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\Framework\App\ObjectManagerFactory;
 use Magento\ImportExport\Model\Import;
 use League\Csv\Reader;
@@ -45,7 +45,7 @@ class ImportCsv extends AbstractImportCommand
     protected function configure()
     {
 
-        $this->setName('fastsimpleimportCli:products:importcsv')
+        $this->setName('magento2fastsimpleimportcli:products:importcsv')
             ->setDescription('Import Products from CSV');
         $this->setBehavior(Import::BEHAVIOR_ADD_UPDATE);
         $this->setEntityCode('catalog_product');

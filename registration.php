@@ -5,6 +5,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Aiartinc_Magento2FastSimpleImportCli',
+    'AiArtInc_Magento2FastSimpleImportCli',
     __DIR__
 );

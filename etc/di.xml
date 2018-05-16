@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 FireGento e.V. - All rights reserved.
+ * Copyright © 2016 AiArtInc e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
 -->
@@ -10,25 +10,25 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="delete_product_all" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\DeleteAll</item>
-                <item name="delete_customers_all" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Customer\DeleteAll</item>
+                <item name="delete_product_all" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\DeleteAll</item>
+                <item name="delete_customers_all" xsi:type="object">FireGento\Magento2FastsimpleimportCli\Console\Command\Customer\DeleteAll</item>
 
-                <item name="import_configurable" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ImportConfigurable</item>
-                <item name="import_simple" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ImportSimple</item>
-                <item name="import_bundle" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ImportBundle</item>
-                <item name="import_multiselect" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ImportMultiselect</item>
-                <item name="import_csv" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ImportCsv</item>
+                <item name="import_configurable" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ImportConfigurable</item>
+                <item name="import_simple" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ImportSimple</item>
+                <item name="import_bundle" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ImportBundle</item>
+                <item name="import_multiselect" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ImportMultiselect</item>
+                <item name="import_csv" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ImportCsv</item>
 
-                <item name="import_customer" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Customer\ImportCustomer</item>
-                <item name="import_category" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Category\ImportCategory</item>
-
-
-                <item name="import_category_multi" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Category\ImportCategoryMultiStoreView</item>
+                <item name="import_customer" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Customer\ImportCustomer</item>
+                <item name="import_category" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Category\ImportCategory</item>
 
 
-                <item name="export_products" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Product\ExportProducts</item>
-                <item name="export_orders" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Orders\ExportOrders</item>
-                <item name="export_customers" xsi:type="object">FireGento\fastsimpleimportCli\Console\Command\Customer\ExportCustomer</item>
+                <item name="import_category_multi" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Category\ImportCategoryMultiStoreView</item>
+
+
+                <item name="export_products" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product\ExportProducts</item>
+                <item name="export_orders" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Orders\ExportOrders</item>
+                <item name="export_customers" xsi:type="object">AiArtInc\Magento2FastsimpleimportCli\Console\Command\Customer\ExportCustomer</item>
 
 
             </argument>

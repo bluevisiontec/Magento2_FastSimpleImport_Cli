@@ -3,9 +3,9 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Customer;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Customer;
 
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
@@ -19,7 +19,7 @@ class ImportCustomer extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportCli:customers:import')
+        $this->setName('magento2fastsimpleimportcli:customers:import')
             ->setDescription('Import Customer ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);

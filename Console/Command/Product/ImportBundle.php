@@ -3,9 +3,9 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Product;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
 
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
@@ -19,7 +19,7 @@ class ImportBundle extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportCli:products:importbundle')
+        $this->setName('magento2fastsimpleimportcli:products:importbundle')
             ->setDescription('Import Bundle Products ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);

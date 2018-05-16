@@ -3,7 +3,7 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command;
 
 use Magento\Backend\App\Area\FrontNameResolver;
 use Magento\Framework\App\ObjectManager\ConfigLoader;

@@ -5,9 +5,9 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Product;
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractExportCommand;
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractExportCommand;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\Framework\App\ObjectManagerFactory;
 use Magento\ImportExport\Model\Import;
 use Magento\Catalog\Api\ProductAttributeOptionManagementInterface;
@@ -22,7 +22,7 @@ class ExportProducts extends AbstractExportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportCli:products:export')
+        $this->setName('magento2fastsimpleimportcli:products:export')
             ->setDescription('Export Products ');
         $this->setEntityCode('catalog_product');
 

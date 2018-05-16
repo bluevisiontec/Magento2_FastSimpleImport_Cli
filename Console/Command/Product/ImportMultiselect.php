@@ -3,8 +3,8 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Product;
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\Framework\App\ObjectManagerFactory;
 use Magento\ImportExport\Model\Import;
 use Magento\Catalog\Api\ProductAttributeOptionManagementInterface;
@@ -19,7 +19,7 @@ class ImportMultiselect extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportCli:products:importmultiselect')
+        $this->setName('magento2fastsimpleimportcli:products:importmultiselect')
             ->setDescription('Import Simple Products with Multiselect ');
 
         $this->setBehavior(Import::BEHAVIOR_ADD_UPDATE);

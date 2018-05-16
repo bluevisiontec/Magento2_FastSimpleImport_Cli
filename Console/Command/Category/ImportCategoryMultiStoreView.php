@@ -5,9 +5,9 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace AiArtInc\fastsimpleimportCli\Console\Command\Category;
+namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Category;
 
-use AiArtInc\fastsimpleimportCli\Console\Command\AbstractImportCommand;
+use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
@@ -21,7 +21,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('fastsimpleimportCli:category:import')
+        $this->setName('magento2fastsimpleimportcli:category:import')
             ->setDescription('Import Category');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);

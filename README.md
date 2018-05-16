@@ -16,33 +16,33 @@ Installation Instructions with Composer
 ## Products
 
 ### Import simple products:
-`bin/magento fastsimpleimportCli:products:importsimple`
+`bin/magento magento2fastsimpleimportcli:products:importsimple`
 
 ### Import configurable products:
-`bin/magento fastsimpleimportCli:products:importconfigurable`
+`bin/magento magento2fastsimpleimportcli:products:importconfigurable`
 
 ### Import bundle products:
-`bin/magento fastsimpleimportCli:products:importbundle`
+`bin/magento magento2fastsimpleimportcli:products:importbundle`
 
 ### Import simple Products with multiselect-attributes:
-`bin/magento fastsimpleimportCli:products:importmultiselect`
+`bin/magento magento2fastsimpleimportcli:products:importmultiselect`
 
 ### Delete all products in Catalog(Warning : really all Products):
-`bin/magento fastsimpleimportCli:products:deleteall`
+`bin/magento magento2fastsimpleimportcli:products:deleteall`
 
 ### Import products from CSV File:
-`bin/magento fastsimpleimportCli:products:importcsv`
+`bin/magento magento2fastsimpleimportcli:products:importcsv`
 
 ## Customers
 
 ### Import customers
-`bin/magento fastsimpleimportCli:customers:import`
+`bin/magento magento2fastsimpleimportcli:customers:import`
 
 ### Delete all customers:
-`bin/magento fastsimpleimportCli:customers:deleteall`
+`bin/magento magento2fastsimpleimportcli:customers:deleteall`
 
 ## Categories
 
 ### Import Categories:
-`bin/magento fastsimpleimportCli:category:import`
+`bin/magento magento2fastsimpleimportcli:category:import`
 
