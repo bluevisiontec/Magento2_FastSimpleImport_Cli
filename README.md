@@ -1,6 +1,7 @@
 # Magento2_FastSimpleImport_Cli
 Cli module for calling FastSimpleImport via command line
 
+AI Art Inc. version starts at 1.2.0
 
 
 Installation Instructions with Composer
