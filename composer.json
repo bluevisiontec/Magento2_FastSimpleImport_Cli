@@ -1,7 +1,7 @@
 {
-  "name": "aiartinc/magento2fastsimpleimportcli",
+  "name": "bluevisiontec/fastsimpleimportcli",
   "description": "Wrapper for Magento2 ImportExport functionality, which imports products and customers from arrays",
-  "homepage": "https://github.com/aiartinc/Magento2_FastSimpleImport_Cli",
+  "homepage": "https://github.com/bluevisiontec/Magento2_FastSimpleImport_Cli",
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0|~7.1.0",
     "firegento/fastsimpleimport": "*",
@@ -10,6 +10,10 @@
   "type": "magento2-module",
   "license": "GPL-3.0",
   "authors": [
+    {
+      "name": "BlueVisionTec UG (haftungsbeschränkt)",
+      "email": "info@bluevisiontec.de"
+    },
     {
       "name": "Team AI Art Inc",
       "email": "hamilton@aiart.io"

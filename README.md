@@ -7,8 +7,8 @@ AI Art Inc. version starts at 1.2.0
 Installation Instructions with Composer
 ---------------------------------------------
 
-    composer require aiartinc/magento2fastsimpleimportcli
-    bin/magento module:enable AiArtInc_Magento2FastSimpleImportCli
+    composer require bluevisiontec/fastsimpleimportcli
+    bin/magento module:enable BlueVisionTec_FastsimpleimportCli
     bin/magento setup:upgrade
     
 
@@ -46,4 +46,14 @@ Installation Instructions with Composer
 
 ### Import Categories:
 `bin/magento magento2fastsimpleimportcli:category:import`
+
+## Credits
+
+This module is a fork of https://github.com/aiartinc/Magento2_FastSimpleImport_Cli
+
+### Initial contributors
+
+* FireGento e.V.
+* Elias Kotlyar
+* AiArtInc e.V.
 

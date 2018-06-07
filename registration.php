@@ -5,6 +5,6 @@
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'AiArtInc_Magento2FastSimpleImportCli',
+    'BlueVisionTec_FastsimpleimportCli',
     __DIR__
 );

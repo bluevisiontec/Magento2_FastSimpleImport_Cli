@@ -5,14 +5,14 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Category;
+namespace BlueVisionTec\FastsimpleimportCli\Console\Command\Category;
 
-use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
+use BlueVisionTec\FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package AiArtInc\FastSimpleImport2\Console\Command
+ * @package BlueVisionTec\FastSimpleImport2\Console\Command
  *
  */
 class ImportCategory extends AbstractImportCommand
@@ -21,7 +21,7 @@ class ImportCategory extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('magento2fastsimpleimportcli:category:import')
+        $this->setName('fastsimpleimportcli:category:import')
             ->setDescription('Import Category');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -38,7 +38,7 @@ class ImportCategory extends AbstractImportCommand
         
         $data[] = array(
             '_root' => 'Default Category',
-            '_category' => 'AiArtInc TestCategory',
+            '_category' => 'BlueVisionTec TestCategory',
             'description' => 'Test2',
             'is_active' => '1',
             'include_in_menu' => '1',

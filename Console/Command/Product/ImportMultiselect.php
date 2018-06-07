@@ -3,14 +3,14 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
-use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
+namespace BlueVisionTec\FastsimpleimportCli\Console\Command\Product;
+use BlueVisionTec\FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\Framework\App\ObjectManagerFactory;
 use Magento\ImportExport\Model\Import;
 use Magento\Catalog\Api\ProductAttributeOptionManagementInterface;
 /**
  * Class TestCommand
- * @package AiArtInc\FastSimpleImport2\Console\Command
+ * @package BlueVisionTec\FastSimpleImport2\Console\Command
  *
  */
 class ImportMultiselect extends AbstractImportCommand
@@ -19,7 +19,7 @@ class ImportMultiselect extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('magento2fastsimpleimportcli:products:importmultiselect')
+        $this->setName('fastsimpleimportcli:products:importmultiselect')
             ->setDescription('Import Simple Products with Multiselect ');
 
         $this->setBehavior(Import::BEHAVIOR_ADD_UPDATE);
@@ -37,11 +37,11 @@ class ImportMultiselect extends AbstractImportCommand
         $data = [];
         for ($i = 1; $i <= 1; $i++) {
             $data[] = array(
-                'sku' => 'AiArtInc-' . $i,
+                'sku' => 'BlueVisionTec-' . $i,
                 'attribute_set_code' => 'Default',
                 'product_type' => 'simple',
                 'product_websites' => 'base',
-                'name' => 'AiArtInc Test Product ' . $i,
+                'name' => 'BlueVisionTec Test Product ' . $i,
                 'price' => '14.0000',
                 'ean' => "1234",
                 'multiselect' => 'Test|Test3'

@@ -3,14 +3,14 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
+namespace BlueVisionTec\FastsimpleimportCli\Console\Command\Product;
 
-use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
+use BlueVisionTec\FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package AiArtInc\FastSimpleImport2\Console\Command
+ * @package BlueVisionTec\FastSimpleImport2\Console\Command
  *
  */
 class ImportBundle extends AbstractImportCommand
@@ -19,7 +19,7 @@ class ImportBundle extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('magento2fastsimpleimportcli:products:importbundle')
+        $this->setName('fastsimpleimportcli:products:importbundle')
             ->setDescription('Import Bundle Products ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -39,7 +39,7 @@ class ImportBundle extends AbstractImportCommand
             'attribute_set_code' => 'Default',
             'product_type' => 'bundle',
             'product_websites' => 'base',
-            'name' => 'AiArtInc Test Product Bundle',
+            'name' => 'BlueVisionTec Test Product Bundle',
             'price' => '10.000',
 
             'bundle_price_type' => 'dynamic',
@@ -61,7 +61,7 @@ class ImportBundle extends AbstractImportCommand
                 'attribute_set_code' => 'Default',
                 'product_type' => 'simple',
                 'product_websites' => 'base',
-                'name' => 'AiArtInc Test Product Simple - ' . $color,
+                'name' => 'BlueVisionTec Test Product Simple - ' . $color,
                 'price' => '14.0000',
                 'additional_attributes' => "color=" . $color
 

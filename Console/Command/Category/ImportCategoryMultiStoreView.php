@@ -5,14 +5,14 @@
  *  * See LICENSE.md bundled with this module for license details.
  *
  */
-namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Category;
+namespace BlueVisionTec\FastsimpleimportCli\Console\Command\Category;
 
-use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
+use BlueVisionTec\FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package AiArtInc\FastSimpleImport2\Console\Command
+ * @package BlueVisionTec\FastSimpleImport2\Console\Command
  *
  */
 class ImportCategoryMultiStoreView extends AbstractImportCommand
@@ -21,7 +21,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('magento2fastsimpleimportcli:category:import')
+        $this->setName('fastsimpleimportcli:category:import')
             ->setDescription('Import Category');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -37,7 +37,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
     {
         $data[] = array(
             '_root' => 'Default Category',
-            '_category' => 'AiArtInc TestCategory DE',
+            '_category' => 'BlueVisionTec TestCategory DE',
             'description' => 'Test2',
             'is_active' => '1',
             'include_in_menu' => '1',
@@ -48,7 +48,7 @@ class ImportCategoryMultiStoreView extends AbstractImportCommand
         );
         $data[] = array(
             '_store' => 'en',
-            'name' => 'AiArtInc TestCategory EN',
+            'name' => 'BlueVisionTec TestCategory EN',
             'description' => 'StoreViewLevel'
         );
         return $data;

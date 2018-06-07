@@ -3,14 +3,14 @@
  * Copyright © 2016 FireGento e.V. - All rights reserved.
  * See LICENSE.md bundled with this module for license details.
  */
-namespace AiArtInc\Magento2FastsimpleimportCli\Console\Command\Product;
+namespace BlueVisionTec\FastsimpleimportCli\Console\Command\Product;
 
-use AiArtInc\Magento2FastsimpleimportCli\Console\Command\AbstractImportCommand;
+use BlueVisionTec\FastsimpleimportCli\Console\Command\AbstractImportCommand;
 use Magento\ImportExport\Model\Import;
 
 /**
  * Class TestCommand
- * @package AiArtInc\FastSimpleImport2\Console\Command
+ * @package BlueVisionTec\FastSimpleImport2\Console\Command
  *
  */
 class ImportConfigurable extends AbstractImportCommand
@@ -19,7 +19,7 @@ class ImportConfigurable extends AbstractImportCommand
 
     protected function configure()
     {
-        $this->setName('magento2fastsimpleimportcli:products:importconfigurable')
+        $this->setName('fastsimpleimportcli:products:importconfigurable')
             ->setDescription('Import Configurable Products ');
 
         $this->setBehavior(Import::BEHAVIOR_APPEND);
@@ -39,7 +39,7 @@ class ImportConfigurable extends AbstractImportCommand
             'attribute_set_code' => 'Default',
             'product_type' => 'simple',
             'product_websites' => 'base',
-            'name' => 'AiArtInc Simple Product Blue,Size Small',
+            'name' => 'BlueVisionTec Simple Product Blue,Size Small',
             'price' => '1.0000',
             'color' => 'blue',
             'size' => 'S'
@@ -49,7 +49,7 @@ class ImportConfigurable extends AbstractImportCommand
             'attribute_set_code' => 'Default',
             'product_type' => 'simple',
             'product_websites' => 'base',
-            'name' => 'AiArtInc Simple Product Red,Size Middle',
+            'name' => 'BlueVisionTec Simple Product Red,Size Middle',
             'price' => '1.0000',
             'color' => 'red',
             'size' => 'M'
@@ -60,7 +60,7 @@ class ImportConfigurable extends AbstractImportCommand
             'attribute_set_code' => 'Default',
             'product_type' => 'configurable',
             'product_websites' => 'base',
-            'name' => 'AiArtInc Test Product Configurable',
+            'name' => 'BlueVisionTec Test Product Configurable',
             'price' => '10.000',
             'configurable_variation_labels' => 'Color',
             'configurable_variations' => array(
