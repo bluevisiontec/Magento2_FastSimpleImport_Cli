@@ -17,6 +17,8 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use Symfony\Component\Console\Style\SymfonyStyle;
+
 /**
  * Class TestCommand
  * @package BlueVisionTec\FastSimpleImport2\Console\Command
@@ -43,6 +45,15 @@ abstract class AbstractImportCommand extends Command
      * @var ObjectManagerFactory
      */
     private $objectManagerFactory;
+    
+    /**
+     * @var SymfonyStyle
+     */
+    protected $io;
+    /**
+     * @var InputInterface
+     */
+    protected $input;
 
     /**
      * Constructor
@@ -77,6 +88,12 @@ abstract class AbstractImportCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+    
+        $io = new SymfonyStyle($input, $output);
+        $this->io = $io;
+        
+        $this->input = $input;
+    
         $omParams = $_SERVER;
         $omParams[StoreManager::PARAM_RUN_CODE] = 'admin';
         $omParams[Store::CUSTOM_ENTRY_POINT_PARAM] = true;
@@ -89,31 +106,37 @@ abstract class AbstractImportCommand extends Command
         $appState->setAreaCode($area);
         $configLoader = $this->objectManager->get('Magento\Framework\ObjectManager\ConfigLoaderInterface');
         $this->objectManager->configure($configLoader->load($area));
-
-        $output->writeln('Import started');
+        
+        $this->io->note('Import started');
 
         $time = microtime(true);
 
         /** @var \BlueVisionTec\FastSimpleImport\Model\Importer $importerModel */
-        $importerModel = $this->objectManager->create('BlueVisionTec\FastSimpleImport\Model\Importer');
+        $importerModel = $this->objectManager->create('FireGento\FastSimpleImport\Model\Importer');
 
         $productsArray = $this->getEntities();
+        
+        if(!$productsArray || empty($productsArray)) {
+            $this->io->error("Empty data.");
+            return false;
+        }
 
         $importerModel->setBehavior($this->getBehavior());
         $importerModel->setEntityCode($this->getEntityCode());
-        $adapterFactory = $this->objectManager->create('BlueVisionTec\FastSimpleImport\Model\Adapters\NestedArrayAdapterFactory');
+        $adapterFactory = $this->objectManager->create('FireGento\FastSimpleImport\Model\Adapters\NestedArrayAdapterFactory');
         $importerModel->setImportAdapterFactory($adapterFactory);
 
         try {
             $importerModel->processImport($productsArray);
         } catch (\Exception $e) {
-            $output->writeln($e->getMessage());
+            $this->io->error($e->getMessage());
         }
 
         $output->write($importerModel->getLogTrace());
         $output->write($importerModel->getErrorMessages());
+        
+        $this->io->success('Import finished. Elapsed time: ' . round(microtime(true) - $time, 2) . 's' . "\n");
 
-        $output->writeln('Import finished. Elapsed time: ' . round(microtime(true) - $time, 2) . 's' . "\n");
         $this->afterFinishImport();
 
     }

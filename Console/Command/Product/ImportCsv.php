@@ -8,9 +8,11 @@ use Magento\Framework\App\ObjectManagerFactory;
 use Magento\ImportExport\Model\Import;
 use League\Csv\Reader;
 
+use Symfony\Component\Console\Input\InputArgument;
+
+
 class ImportCsv extends AbstractImportCommand
 {
-    const IMPORT_FILE = "importfile.csv";
 
     /**
      * @var \Magento\Framework\Filesystem\Directory\ReadFactory
@@ -40,6 +42,7 @@ class ImportCsv extends AbstractImportCommand
         $this->readFactory = $readFactory;
 
         $this->directory_list = $directory_list;
+        
     }
 
     protected function configure()
@@ -49,6 +52,8 @@ class ImportCsv extends AbstractImportCommand
             ->setDescription('Import Products from CSV');
         $this->setBehavior(Import::BEHAVIOR_ADD_UPDATE);
         $this->setEntityCode('catalog_product');
+        
+        $this->addArgument('csvPath', InputArgument::REQUIRED, __('Path to CSV file or import dir'));
 
         parent::configure();
     }
@@ -58,31 +63,59 @@ class ImportCsv extends AbstractImportCommand
      */
     protected function getEntities()
     {
-        $csvIterationObject = $this->readCSV();
-        $data = array();
-        // Do mapping here:
-        foreach($csvIterationObject as $row){
-            $data[]  = $row;
+    
+        $csvPath = $this->input->getArgument('csvPath');
+        
+        if(!$readFiles = $this->getFilePaths($csvPath)) {
+            return false;
         }
-        //  Mapping end
-        //var_dump($data);
-        //die();
+
+        return $this->getData($readFiles);
+    }
+
+    protected function getData($readFiles)
+    {
+        $data = [];
+        
+        foreach($readFiles as $csvFile) {
+            $csvObj = Reader::createFromPath($csvFile,'r');
+            $csvObj->setHeaderOffset(0);
+            $csvObj->setDelimiter(',');
+            foreach ($csvObj->getRecords() as $record) {
+                $data[] = $record;
+            }
+        }
+        
         return $data;
-    }
-
-    protected function readCSV()
-    {
-        $csvObj = Reader::createFromString($this->readFile(static::IMPORT_FILE));
-        $csvObj->setDelimiter(',');
-        $results = $csvObj->fetchAssoc();
-        return $results;
 
     }
 
-    protected function readFile($fileName)
+    protected function getFilePaths($csvPath)
     {
-        $path = $this->directory_list->getRoot();
-        $directoryRead = $this->readFactory->create($path);
-        return $directoryRead->readFile($fileName);
+        if( !($csvPath === DIRECTORY_SEPARATOR || preg_match('~\A[A-Z]:(?![^/\\\\])~i',$csvPath) > 0)) {
+            // relative path
+            $csvPath = $this->directory_list->getRoot() . "/" . $csvPath;
+        }
+        
+        if(!file_exists($csvPath)) {
+            $this->io->error('Path does not exist.');
+            return false;
+        }
+        $readFiles = [];
+        
+        
+        
+        if(is_dir($csvPath)) {
+            $csvPath = rtrim($csvPath, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+            foreach(scandir($csvPath) as $fileName) {
+                if(is_file($csvPath.$fileName)) {
+                    $readFiles[] = $csvPath.$fileName;
+                }
+            }
+        } else {
+            $readFiles[] = $csvPath;
+        }
+        
+        return $readFiles;
     }
 }
